@@ -23,16 +23,18 @@ struct ContentView: View {
             VStack {
                 Button(action: {coord = (129.05562775, 35.1379222)}) {
                     Text("Move to Busan")
+                        .font(.largeTitle)
                 }
                 Button(action: {coord = (126.9784147, 37.5666805)}) {
                     Text("Move to Seoul somewhere")
+                        .font(.largeTitle)
                 }
                 Spacer()
             }
             .zIndex(1)
             
             UIMapView(coord)
-                .edgesIgnoringSafeArea(.vertical)
+                .edgesIgnoringSafeArea(.top)
         }
         .onAppear {
             Task {
