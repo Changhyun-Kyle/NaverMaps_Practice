@@ -5,34 +5,44 @@
 //  Created by 강창현 on 2023/01/17.
 //
 
-import Foundation
-// https://mocki.io/v1/38197c1b-de99-4658-8cf1-e401ccbf10af
-struct MapViewModel: Codable, Hashable {
-        let shopName, shopAddress: String
-        let longitude, latitude: Double
-        let shopIntroduction: String
-        let shopPhoneNumber, shopSNSLink, shopItems, shopNoticeBoard: String
-        let shopOpenTimes: String
-}
+import SwiftUI
+import CoreLocation
 
-class MapStore : ObservableObject {
+final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+    var locationManager: CLLocationManager?
+    @Published var coord = (0.0, 0.0)
+//    @Published var foodCarts = foodCartDummy
     
-    @Published var markers: [MapViewModel]
+    func checkIfLocationServicesIsEnabled() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager!.delegate = self
+            checkLocationAuthorization()
+        } else {
+            print("Show an alert letting them know this is off and to go turn i on.")
+        }
+    }
     
-    init (markers: [MapViewModel] = []) {
-        self.markers = markers
+    func checkLocationAuthorization() {
+        guard let locationManager = locationManager else { return }
+        
+        switch locationManager.authorizationStatus {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            print("Your location is restricted likely due to parental controls.")
+        case .denied:
+            print("You have denied this app location permission. Go into setting to change it.")
+        case .authorizedAlways, .authorizedWhenInUse:
+            coord = (Double(locationManager.location?.coordinate.latitude ?? 0.0), Double(locationManager.location?.coordinate.longitude ?? 0.0))
+            print("GPS 권한 설정 완료")
+            print("coord : \(coord)")
+        @unknown default:
+            break
+        }
     }
-}
-
-class WebService {
-    func fetchData(url: String) async throws -> [MapViewModel] {
-        guard let url = URL(string: url) else { return [] }
-        
-        let (data, _) = try await URLSession.shared.data(from: url)
-        let markers = try JSONDecoder().decode([MapViewModel].self, from: data)
-        
-//        print("\(markers)")
-        
-        return markers
-    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
+     }
 }
