@@ -23,26 +23,26 @@ struct MapView: View {
         NavigationStack {
             ZStack {
                 VStack {
-//                    HStack {
-//                        MapViewSearchBar(mapSearchBarText: $mapSearchBarText)
-//                            
-//                        NavigationLink {
-////                            CartView()
-//                        } label: {
-//                            Image(systemName: "cart")
-//                                .foregroundColor(.accentColor)
-//                                .bold()
-//                                .padding(10)
-//                                .frame(width: 40)
-//                                
-//                                .background{
-//                                    Color.white
-//                                }
-//                                .cornerRadius(10)
-//                                .shadow(color: Color("BottleShopDetailBGShadowColor"), radius: 3, x: 0, y: 4)
-//                        }
-//                        
-//                    }
+                    HStack {
+                        MapViewSearchBar(mapSearchBarText: $mapSearchBarText)
+                            
+                        NavigationLink {
+//                            CartView()
+                        } label: {
+                            Image(systemName: "cart")
+                                .foregroundColor(.accentColor)
+                                .bold()
+                                .padding(10)
+                                .frame(width: 40)
+                                
+                                .background{
+                                    Color.white
+                                }
+                                .cornerRadius(10)
+                                .shadow(color: Color("BottleShopDetailBGShadowColor"), radius: 3, x: 0, y: 4)
+                        }
+                        
+                    }
                     Spacer()
                     
                 }
@@ -52,6 +52,7 @@ struct MapView: View {
                 BottomSheetView(isOpen: $isShowingSheet, maxHeight: 200) {
                     TestView()
                 }
+                .zIndex(2)
             }
             .onAppear {
                 mapViewModel.checkIfLocationServicesIsEnabled()
