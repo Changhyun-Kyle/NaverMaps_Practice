@@ -11,9 +11,14 @@ import CoreLocation
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            MapView().tabItem {
-                Image(systemName: "map")
+        NavigationStack {
+            TabView {
+                MapView().tabItem {
+                    Image(systemName: "map")
+                }
+                TestView().tabItem {
+                    Image(systemName: "gear")
+                }
             }
         }
     }
