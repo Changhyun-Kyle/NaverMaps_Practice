@@ -40,8 +40,8 @@ struct BottomSheetView<Content: View>: View {
     }
 
     init(isOpen: Binding<Bool>, maxHeight: CGFloat, @ViewBuilder content: () -> Content) {
-        self.minHeight = maxHeight * Constants.minHeightRatio
-        self.maxHeight = 500
+        self.minHeight = 100
+        self.maxHeight = 700
         self.content = content()
         self._isOpen = isOpen
     }
@@ -55,7 +55,7 @@ struct BottomSheetView<Content: View>: View {
             .frame(width: geometry.size.width, height: self.maxHeight, alignment: .top)
             .background(Color(.secondarySystemBackground))
             .cornerRadius(Constants.radius)
-            .frame(height: geometry.size.height, alignment: .top)
+            .frame(height: geometry.size.height, alignment: .bottom)
             .offset(y: max(self.offset + self.translation, 0))
             .animation(.interactiveSpring())
             .gesture(
