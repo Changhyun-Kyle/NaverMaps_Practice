@@ -53,6 +53,22 @@ struct MapView: View {
                     TestView()
                 }
                 .zIndex(2)
+                
+                // MARK: - 현 위치로 이동
+                Button {
+                    // 현재 위치로 이동 액션
+                } label: {
+                    Text("현재 위치로 이동")
+                }
+                
+                // MARK: - 북마크한 마커 표시
+                Button {
+                    // 북마크한 마커 표시 액션
+                } label: {
+                    Text("북마크한 마커 표시")
+                }
+
+
             }
             .onAppear {
                 mapViewModel.checkIfLocationServicesIsEnabled()
