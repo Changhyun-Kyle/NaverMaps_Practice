@@ -20,7 +20,7 @@ struct TestView: View {
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             }
-            .navigationTitle("둘러보기")
+//            .navigationTitle("둘러보기")
 //            .navigationBarTitleDisplayMode(.inline)
         }
     }
