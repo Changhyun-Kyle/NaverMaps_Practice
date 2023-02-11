@@ -9,26 +9,16 @@ import SwiftUI
 
 struct MapViewSearchBar: View {
     
-    @Binding var mapSearchBarText: String
+//    @Binding var mapSearchBarText: String
     
     var body: some View {
         HStack {
-            TextField("바틀샵/상품을 입력해주세요", text: $mapSearchBarText)
+            Text("바틀샵/상품을 입력해주세요")
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.gray)
             Image(systemName: "magnifyingglass")
                 .foregroundColor(.accentColor)
                 .bold()
-            if !mapSearchBarText.isEmpty {
-                Button(action: {
-                    
-                    self.mapSearchBarText = ""
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                }
-            } else {
-                EmptyView()
-            }
         }
         .padding(10)
         .frame(width: 300)
@@ -44,6 +34,6 @@ struct MapViewSearchBar: View {
 
 struct MapViewSearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        MapViewSearchBar(mapSearchBarText: .constant(""))
+        MapViewSearchBar()
     }
 }
