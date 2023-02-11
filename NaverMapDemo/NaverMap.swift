@@ -78,12 +78,12 @@ struct NaverMap: UIViewRepresentable {
             print("marker touched")
             
             // 마커 터치 시 마커 아이콘 크기 변경
-            marker.iconImage = NMFOverlayImage(name: showMarkerDetailView ? "MapMarker_tapped" : "MapMarker.fill")
+//            marker.iconImage = NMFOverlayImage(name:  "MapMarker_tapped" : "MapMarker.fill")
             marker.width = CGFloat(NMF_MARKER_SIZE_AUTO)
             marker.height = CGFloat(NMF_MARKER_SIZE_AUTO)
             
             // 마커 터치 시 해당 마커 좌표로 카메라 이동
-            coord = (marker.position.lat,marker.position.lng)
+//            coord = (marker.position.lat,marker.position.lng)
             
             return true
         }

@@ -13,6 +13,7 @@
 		270FD1CB29763D7E0002673D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270FD1CA29763D7E0002673D /* Preview Assets.xcassets */; };
 		27281CDD29767D5A003BE8B4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27281CDC29767D5A003BE8B4 /* MapViewModel.swift */; };
 		27281CDF29767E58003BE8B4 /* csvjson.json in Resources */ = {isa = PBXBuildFile; fileRef = 27281CDE29767E58003BE8B4 /* csvjson.json */; };
+		2781FABC2996201F005A047F /* MapSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781FABB2996201F005A047F /* MapSearchView.swift */; };
 		27D82C4E297D11A3004F3D94 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D82C4D297D11A3004F3D94 /* MapView.swift */; };
 		27D82C50297D11BA004F3D94 /* NaverMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D82C4F297D11BA004F3D94 /* NaverMap.swift */; };
 		27D82C522983C487004F3D94 /* MapViewSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D82C512983C487004F3D94 /* MapViewSearchBar.swift */; };
@@ -30,6 +31,7 @@
 		27281CDB29765555003BE8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		27281CDC29767D5A003BE8B4 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		27281CDE29767E58003BE8B4 /* csvjson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = csvjson.json; sourceTree = "<group>"; };
+		2781FABB2996201F005A047F /* MapSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchView.swift; sourceTree = "<group>"; };
 		27D82C4D297D11A3004F3D94 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		27D82C4F297D11BA004F3D94 /* NaverMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMap.swift; sourceTree = "<group>"; };
 		27D82C512983C487004F3D94 /* MapViewSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSearchBar.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				270FD1C529763D7C0002673D /* ContentView.swift */,
 				27281CDC29767D5A003BE8B4 /* MapViewModel.swift */,
 				27D82C4D297D11A3004F3D94 /* MapView.swift */,
+				2781FABB2996201F005A047F /* MapSearchView.swift */,
 				27D82C4F297D11BA004F3D94 /* NaverMap.swift */,
 				27D82C512983C487004F3D94 /* MapViewSearchBar.swift */,
 				27D82C532983C554004F3D94 /* BottomSheetView.swift */,
@@ -231,6 +234,7 @@
 			files = (
 				27D82C542983C554004F3D94 /* BottomSheetView.swift in Sources */,
 				270FD1C629763D7C0002673D /* ContentView.swift in Sources */,
+				2781FABC2996201F005A047F /* MapSearchView.swift in Sources */,
 				27D82C50297D11BA004F3D94 /* NaverMap.swift in Sources */,
 				27D82C4E297D11A3004F3D94 /* MapView.swift in Sources */,
 				27D82C562983C752004F3D94 /* TestView.swift in Sources */,
